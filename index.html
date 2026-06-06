@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paul Meshach — Backend Developer | Python Developer</title>
+<meta name="description" content="Paul Meshach — Junior Python & Backend Developer from Coimbatore, India. Building production-grade REST APIs with FastAPI, SQLAlchemy, and PostgreSQL.">
+<meta name="keywords" content="Paul Meshach, Python Developer, Backend Developer, FastAPI, SQLAlchemy, Coimbatore, Junior Python Developer">
+<meta property="og:title" content="Paul Meshach — Backend Developer">
+<meta property="og:description" content="Self-taught Python backend engineer. FastAPI · SQLAlchemy · PostgreSQL · REST APIs. Open to Junior roles.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paul-meshach.github.io/">
+<meta property="og:image" content="https://paul-meshach.github.io/assets/og-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paul Meshach — Backend Developer">
+<meta name="twitter:description" content="Junior Python &amp; Backend Developer. FastAPI · PostgreSQL · REST APIs. Open to Junior roles.">
+<link rel="canonical" href="https://paul-meshach.github.io/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+--bg:#0a0e1a;--bg2:#0f1526;--bg3:#141c30;--surface:#1a2340;--surface2:#1f2a4a;
+--border:#ffffff12;--border2:#ffffff20;--text:#f0f4ff;--text2:#8fa0c0;--text3:#5c7099;
+--accent:#4f8ef7;--accent2:#3a6fd4;--accent-glow:#4f8ef720;--green:#22c77a;--amber:#f5a623;
+--nav-h:64px;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;}
+::selection{background:var(--accent);color:#fff;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--surface2);border-radius:2px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg)ee;border-bottom:1px solid var(--border);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 5%;backdrop-filter:blur(12px);}
+.nav-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--text);text-decoration:none;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:14px;transition:color .2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:500;text-decoration:none;transition:background .2s;}
+.nav-cta:hover{background:var(--accent2);}
+.wrap{max-width:1100px;margin:0 auto;padding:0 5%;}
+section{padding:100px 0;}
+.hero{min-height:calc(100vh - var(--nav-h));display:flex;align-items:center;gap:60px;padding-top:calc(var(--nav-h) + 40px);}
+.hero-left{flex:1;min-width:0;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-glow);border:1px solid #4f8ef730;color:var(--accent);font-size:12px;font-weight:500;padding:6px 14px;border-radius:999px;margin-bottom:28px;letter-spacing:.4px;}
+.hero-badge::before{content:'';width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-family:'Syne',sans-serif;font-size:clamp(36px,5vw,58px);font-weight:800;line-height:1.08;letter-spacing:-1.5px;color:var(--text);margin-bottom:20px;}
+h1 .line2{color:var(--accent);}
+.hero-sub{font-size:16px;color:var(--text2);line-height:1.7;max-width:520px;margin-bottom:36px;font-weight:300;}
+.hero-sub strong{color:var(--text);font-weight:500;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:#fff;padding:12px 26px;border-radius:9px;text-decoration:none;font-size:14px;font-weight:500;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px);}
+.btn-secondary{background:transparent;color:var(--text);padding:12px 26px;border-radius:9px;text-decoration:none;font-size:14px;font-weight:500;border:1px solid var(--border2);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-secondary:hover{background:var(--surface);border-color:var(--accent);color:var(--accent);}
+.hero-right{flex:0 0 300px;display:flex;justify-content:center;}
+.hero-avatar{width:240px;height:240px;border-radius:24px;background:var(--surface);border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:var(--text3);position:relative;overflow:hidden;}
+.avatar-initials{font-family:'Syne',sans-serif;font-size:52px;font-weight:800;color:var(--accent);line-height:1;position:relative;z-index:1;}
+.avatar-sub{font-size:11px;color:var(--text3);letter-spacing:.6px;text-transform:uppercase;position:relative;z-index:1;}
+.hero-stats{display:flex;gap:24px;margin-top:40px;padding-top:40px;border-top:1px solid var(--border);}
+.stat{display:flex;flex-direction:column;gap:2px;}
+.stat-num{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--text);}
+.stat-label{font-size:12px;color:var(--text3);}
+.sec-divider{height:1px;background:var(--border);}
+.sec-label{font-size:11px;font-weight:500;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,38px);font-weight:700;letter-spacing:-1px;color:var(--text);margin-bottom:14px;line-height:1.1;}
+.sec-sub{font-size:15px;color:var(--text2);max-width:520px;line-height:1.7;margin-bottom:52px;font-weight:300;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
+.about-text p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;font-weight:300;}
+.about-text p strong{color:var(--text);font-weight:500;}
+.about-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;}
+.about-card h4{font-size:11px;color:var(--accent);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:18px;font-weight:500;}
+.about-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);}
+.about-row:last-child{border-bottom:none;}
+.about-row-icon{width:34px;height:34px;background:var(--accent-glow);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.about-row-label{font-size:11px;color:var(--text3);}
+.about-row-val{font-size:13px;color:var(--text);font-weight:500;}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;transition:all .2s;}
+.skill-card:hover{border-color:#4f8ef740;transform:translateY(-2px);}
+.skill-card-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.skill-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.skill-icon.python{background:#3572A520;}.skill-icon.backend{background:#22c77a20;}.skill-icon.db{background:#f5a62320;}.skill-icon.tools{background:#7c6cf820;}
+.skill-card-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--text);}
+.skill-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.skill-tag{background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:11px;padding:4px 10px;border-radius:6px;}
+.skill-tag.hot{border-color:#4f8ef740;color:var(--accent);background:var(--accent-glow);}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+.project-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px;transition:all .25s;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden;}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--green));opacity:0;transition:opacity .25s;}
+.project-card:hover::before{opacity:1;}
+.project-card:hover{border-color:var(--border2);transform:translateY(-3px);}
+.project-num{font-size:11px;color:var(--text3);letter-spacing:1px;font-weight:500;}
+.project-card h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--text);letter-spacing:-.4px;line-height:1.2;}
+.project-desc{font-size:13px;color:var(--text2);line-height:1.7;font-weight:300;flex:1;}
+.project-tech{display:flex;flex-wrap:wrap;gap:6px;}
+.tech-tag{background:var(--bg3);border:1px solid var(--border);color:var(--text3);font-size:10px;padding:3px 9px;border-radius:5px;}
+.project-links{display:flex;gap:10px;margin-top:4px;}
+.proj-link{font-size:12px;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:4px;font-weight:500;border:1px solid #4f8ef730;padding:6px 14px;border-radius:7px;transition:all .2s;}
+.proj-link:hover{background:var(--accent-glow);border-color:var(--accent);}
+.project-highlights{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.project-highlights li{font-size:12px;color:var(--text2);padding-left:16px;position:relative;font-weight:300;line-height:1.5;}
+.project-highlights li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;}
+.exp-timeline{display:flex;flex-direction:column;gap:0;}
+.exp-item{display:grid;grid-template-columns:140px 1fr;gap:28px;padding-bottom:48px;position:relative;}
+.exp-item::before{content:'';position:absolute;left:130px;top:8px;bottom:0;width:1px;background:var(--border);}
+.exp-item:last-child::before{display:none;}
+.exp-date{font-size:12px;color:var(--text3);text-align:right;padding-top:4px;line-height:1.5;}
+.exp-dot{position:absolute;left:125px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);z-index:1;}
+.exp-body{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;}
+.exp-role{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.exp-company{font-size:13px;color:var(--accent);font-weight:500;margin-bottom:14px;}
+.exp-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.exp-list li{font-size:13px;color:var(--text2);padding-left:18px;position:relative;font-weight:300;line-height:1.6;}
+.exp-list li::before{content:'▸';position:absolute;left:0;color:var(--text3);font-size:10px;top:3px;}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.cert-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px;transition:all .2s;}
+.cert-card:hover{border-color:#4f8ef740;transform:translateY(-2px);}
+.cert-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.cert-icon.hr{background:#00ea6420;}.cert-icon.edu{background:#4f8ef720;}
+.cert-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:var(--text);line-height:1.3;}
+.cert-issuer{font-size:12px;color:var(--text3);}
+.cert-badge{display:inline-flex;align-items:center;gap:5px;background:#22c77a15;color:var(--green);font-size:10px;font-weight:500;padding:3px 10px;border-radius:999px;border:1px solid #22c77a30;width:fit-content;}
+.cert-link{font-size:11px;color:var(--accent);text-decoration:none;font-weight:500;}
+.cert-link:hover{text-decoration:underline;}
+.edu-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px 32px;display:flex;gap:24px;align-items:flex-start;}
+.edu-icon{width:52px;height:52px;background:var(--accent-glow);border:1px solid #4f8ef720;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.edu-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.edu-sub{font-size:13px;color:var(--text3);margin-bottom:10px;}
+.edu-cgpa{display:inline-flex;align-items:center;gap:6px;background:#22c77a15;color:var(--green);font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px;border:1px solid #22c77a30;}
+.edu-courses{margin-top:14px;}
+.edu-courses p{font-size:11px;color:var(--text3);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;}
+.edu-courses-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.edu-courses-tag{background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:11px;padding:3px 9px;border-radius:5px;}
+.learning-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;}
+.learn-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;transition:all .2s;}
+.learn-card:hover{border-color:#4f8ef730;transform:translateY(-1px);}
+.learn-icon{font-size:24px;margin-bottom:10px;}
+.learn-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--text);margin-bottom:5px;}
+.learn-status{display:inline-block;font-size:10px;padding:2px 8px;border-radius:999px;font-weight:500;}
+.learn-status.active{background:#22c77a15;color:var(--green);border:1px solid #22c77a30;}
+.learn-status.next{background:#f5a62315;color:var(--amber);border:1px solid #f5a62330;}
+.learn-desc{font-size:11px;color:var(--text3);margin-top:8px;line-height:1.5;}
+.profiles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+.profile-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 22px;display:flex;align-items:center;gap:14px;text-decoration:none;transition:all .2s;color:inherit;}
+.profile-card:hover{border-color:#4f8ef740;background:var(--surface2);transform:translateY(-2px);}
+.profile-logo{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.profile-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--text);}
+.profile-handle{font-size:11px;color:var(--text3);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
+.contact-info{display:flex;flex-direction:column;gap:14px;}
+.contact-item{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 20px;}
+.contact-item-icon{width:38px;height:38px;background:var(--accent-glow);border:1px solid #4f8ef720;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.contact-item-label{font-size:11px;color:var(--text3);margin-bottom:2px;}
+.contact-item-val{font-size:13px;color:var(--text);font-weight:500;}
+.contact-cta{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:20px;}
+.contact-cta h3{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--text);letter-spacing:-.4px;}
+.contact-cta p{font-size:14px;color:var(--text2);line-height:1.7;font-weight:300;}
+footer{border-top:1px solid var(--border);padding:32px 5%;text-align:center;color:var(--text3);font-size:12px;}
+@media(max-width:768px){
+nav .nav-links{display:none;}.hamburger{display:flex;}
+.hero{flex-direction:column;gap:32px;text-align:center;padding-top:calc(var(--nav-h) + 24px);}
+.hero-right{flex:unset;}
+.hero-btns{justify-content:center;}
+.hero-stats{justify-content:center;}
+.about-grid,.contact-grid{grid-template-columns:1fr;}
+.exp-item{grid-template-columns:1fr;padding-left:20px;}
+.exp-item::before{left:6px;}.exp-dot{left:1px;}.exp-date{text-align:left;}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 5%;flex-direction:column;gap:0;z-index:99;}
+.mobile-menu a{color:var(--text2);text-decoration:none;font-size:14px;padding:14px 0;border-bottom:1px solid var(--border);display:block;}
+.mobile-menu a:last-child{border-bottom:none;}
+.mobile-menu.open{display:flex;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Paul <span>Meshach</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button><a class="nav-cta" href="mailto:paulowebmeshach@gmail.com">Hire Me</a>
+</nav>
+<div class="mobile-menu" id="mobileMenu"><a href="#about" onclick="closeMobileMenu()">About</a><a href="#skills" onclick="closeMobileMenu()">Skills</a><a href="#projects" onclick="closeMobileMenu()">Projects</a><a href="#experience" onclick="closeMobileMenu()">Experience</a><a href="#contact" onclick="closeMobileMenu()">Contact</a></div>
+
+<div class="wrap">
+<section id="home" class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">&#x1F7E2; Open to Opportunities</div>
+    <h1>Paul Meshach<br><span class="line2">Backend Developer</span></h1>
+    <p class="hero-sub">Computer Science graduate building <strong>production-grade REST APIs</strong> with Python, FastAPI, and PostgreSQL. Passionate about <strong>backend architecture</strong>, clean database design, and growing toward <strong>Data &amp; AI Engineering</strong>.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://github.com/Paul-Meshach" target="_blank">&#8599; View GitHub</a>
+      <a class="btn-secondary" href="#projects">View Projects</a>
+      <a class="btn-secondary" href="mailto:paulowebmeshach@gmail.com">Get In Touch</a>
+      <a class="btn-secondary" href="assets/resume/Paul_Meshach_Resume.pdf" target="_blank" download>&#11015; Resume</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Production Projects</span></div>
+      <div class="stat"><span class="stat-num">8.3</span><span class="stat-label">CGPA &mdash; CS Grad</span></div>
+      <div class="stat"><span class="stat-num">2</span><span class="stat-label">HackerRank Certs</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-avatar">
+      <span class="avatar-initials">PM</span>
+      <span class="avatar-sub">Photo Coming Soon</span>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="sec-divider"></div>
+
+<div class="wrap">
+<section id="about">
+  <div class="sec-label">About Me</div>
+  <h2 class="sec-title">The Engineer Behind The Code</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a <strong>Computer Science graduate (2024)</strong> from Coimbatore, India, self-teaching my way into backend engineering with a clear mission &mdash; build real systems, not just tutorials.</p>
+      <p>My flagship project, the <strong>Resume Review Workflow System</strong>, is a full enterprise backend with JWT auth, RBAC, multi-format file parsing, SQL schema design, and SMTP notifications &mdash; built independently using FastAPI and SQL Server.</p>
+      <p>Beyond Python and FastAPI, I've worked with <strong>Pandas, Power BI, and SQL</strong> for data pipelines and analytics, giving me a well-rounded view of how data moves through systems. My long-term goal is <strong>Data Engineering &rarr; AI/ML Engineering</strong>.</p>
+      <p>I'm actively <strong>seeking junior Python backend roles</strong> at product companies and funded startups where I can contribute from day one and grow fast.</p>
+    </div>
+    <div class="about-card">
+      <h4>Quick Profile</h4>
+      <div class="about-row"><div class="about-row-icon">&#127891;</div><div><div class="about-row-label">Degree</div><div class="about-row-val">B.E. Computer Science, 2024</div></div></div>
+      <div class="about-row"><div class="about-row-icon">&#128205;</div><div><div class="about-row-label">Location</div><div class="about-row-val">Coimbatore, Tamil Nadu</div></div></div>
+      <div class="about-row"><div class="about-row-icon">&#128188;</div><div><div class="about-row-label">Target Role</div><div class="about-row-val">Junior Python / Backend Developer</div></div></div>
+      <div class="about-row"><div class="about-row-icon">&#128231;</div><div><div class="about-row-label">Email</div><div class="about-row-val">paulowebmeshach@gmail.com</div></div></div>
+      <div class="about-row"><div class="about-row-icon">&#127919;</div><div><div class="about-row-label">Long-term Goal</div><div class="about-row-val">Data Engineering &rarr; AI/ML</div></div></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="sec-divider"></div>
+
+<div class="wrap">
+<section id="skills">
+  <div class="sec-label">Technical Skills</div>
+  <h2 class="sec-title">Stack &amp; Toolset</h2>
+  <p class="sec-sub">Self-taught through building real projects &mdash; every skill here has been applied in a working system.</p>
+  <div class="skills-grid">
+    <div class="skill-card"><div class="skill-card-header"><div class="skill-icon python">&#128013;</div><div class="skill-card-title">Languages</div></div><div class="skill-tags"><span class="skill-tag hot">Python</span><span class="skill-tag hot">SQL</span><span class="skill-tag">JavaScript</span></div></div>
+    <div class="skill-card"><div class="skill-card-header"><div class="skill-icon backend">&#9881;&#65039;</div><div class="skill-card-title">Backend &amp; APIs</div></div><div class="skill-tags"><span class="skill-tag hot">FastAPI</span><span class="skill-tag hot">Flask</span><span class="skill-tag hot">REST APIs</span><span class="skill-tag">JWT Auth</span><span class="skill-tag">RBAC</span><span class="skill-tag">SMTP</span><span class="skill-tag">Pydantic</span><span class="skill-tag">bcrypt</span></div></div>
+    <div class="skill-card"><div class="skill-card-header"><div class="skill-icon db">&#128451;&#65039;</div><div class="skill-card-title">Databases</div></div><div class="skill-tags"><span class="skill-tag hot">PostgreSQL</span><span class="skill-tag hot">MySQL</span><span class="skill-tag">SQL Server</span><span class="skill-tag hot">SQLAlchemy ORM</span><span class="skill-tag">Schema Design</span></div></div>
+    <div class="skill-card"><div class="skill-card-header"><div class="skill-icon python">&#128202;</div><div class="skill-card-title">Data &amp; Analytics</div></div><div class="skill-tags"><span class="skill-tag hot">Pandas</span><span class="skill-tag hot">Power BI</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">ETL Fundamentals</span><span class="skill-tag">pdfplumber</span></div></div>
+    <div class="skill-card"><div class="skill-card-header"><div class="skill-icon tools">&#128295;</div><div class="skill-card-title">Tools &amp; Concepts</div></div><div class="skill-tags"><span class="skill-tag hot">Git / GitHub</span><span class="skill-tag">Postman</span><span class="skill-tag">Swagger UI</span><span class="skill-tag">Linux</span><span class="skill-tag">VS Code</span><span class="skill-tag">OOP</span><span class="skill-tag">DSA</span></div></div>
+    <div class="skill-card"><div class="skill-card-header"><div class="skill-icon backend">&#128640;</div><div class="skill-card-title">Currently Learning</div></div><div class="skill-tags"><span class="skill-tag hot">Apache Airflow</span><span class="skill-tag hot">Docker</span><span class="skill-tag">System Design</span><span class="skill-tag">Cloud (AWS)</span></div></div>
+  </div>
+</section>
+</div>
+
+<div class="sec-divider"></div>
+
+<div class="wrap">
+<section id="projects">
+  <div class="sec-label">Projects</div>
+  <h2 class="sec-title">Built From Scratch</h2>
+  <p class="sec-sub">Every project below is production-oriented, independently built, and represents a real engineering problem solved.</p>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-num">01 / Featured</div>
+      <h3>Resume Review Workflow System</h3>
+      <p class="project-desc">A full enterprise backend &mdash; five router domains, JWT magic-link auth, RBAC, multi-format file parsing, SQL schema design, and real-time SMTP email notifications. Built with a React + TailwindCSS frontend.</p>
+      <ul class="project-highlights">
+        <li>Stateless JWT auth + Admin &amp; Team Lead RBAC</li>
+        <li>PDF &amp; DOCX parsing via pdfplumber + python-docx</li>
+        <li>Magic link tokens with 72-hour expiry for secure access</li>
+        <li>SMTP HTML email with resume attachments + in-app notifications</li>
+        <li>Normalized SQL Server schema across 4 tables with FK relationships</li>
+      </ul>
+      <div class="project-tech"><span class="tech-tag">FastAPI</span><span class="tech-tag">Python</span><span class="tech-tag">SQL Server</span><span class="tech-tag">SQLAlchemy</span><span class="tech-tag">JWT</span><span class="tech-tag">React</span><span class="tech-tag">TailwindCSS</span></div>
+      <div class="project-links"><a class="proj-link" href="https://github.com/Paul-Meshach/resume-review-system" target="_blank">&#8599; GitHub</a></div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">02</div>
+      <h3>Zomato Analytics Pro</h3>
+      <p class="project-desc">A food ordering system with a Flask backend, MySQL persistence, and a full analytics layer. 15+ SQL queries, Pandas aggregation over 500+ order records, and Matplotlib chart endpoints.</p>
+      <ul class="project-highlights">
+        <li>Normalized 4-table schema: users, menu_items, orders, order_items</li>
+        <li>Revenue calculation using JOINs, GROUP BY, SUM aggregates</li>
+        <li>Pandas-powered trend analysis served as JSON chart endpoints</li>
+      </ul>
+      <div class="project-tech"><span class="tech-tag">Flask</span><span class="tech-tag">Python</span><span class="tech-tag">MySQL</span><span class="tech-tag">Pandas</span><span class="tech-tag">Matplotlib</span></div>
+      <div class="project-links"><a class="proj-link" href="https://github.com/Paul-Meshach/Zomato_Analytics_Pro" target="_blank">&#8599; GitHub</a></div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">03</div>
+      <h3>Retail Sales Intelligence Pipeline</h3>
+      <p class="project-desc">An end-to-end data pipeline from CSV ingestion through Pandas transformation to structured MySQL storage, powering downstream analytics with SQL window functions and Power BI dashboards.</p>
+      <ul class="project-highlights">
+        <li>CSV &rarr; Pandas ETL &rarr; structured MySQL storage</li>
+        <li>Window functions for period-over-period revenue comparisons</li>
+        <li>Identified high-performing regions and seasonal demand patterns</li>
+      </ul>
+      <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">MySQL</span><span class="tech-tag">SQL</span><span class="tech-tag">Pandas</span><span class="tech-tag">Power BI</span></div>
+      <div class="project-links"><a class="proj-link" href="https://github.com/Paul-Meshach/retail-sales-intelligence" target="_blank">&#8599; GitHub</a></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="sec-divider"></div>
+
+<div class="wrap">
+<section id="experience">
+  <div class="sec-label">Work Experience</div>
+  <h2 class="sec-title">Professional Journey</h2>
+  <p class="sec-sub">Non-IT roles where Python and data skills delivered real automation and reporting impact.</p>
+  <div class="exp-timeline">
+    <div class="exp-item">
+      <div class="exp-date">Jun 2025<br>&ndash;<br>Feb 2026</div>
+      <div class="exp-dot"></div>
+      <div class="exp-body">
+        <div class="exp-role">Technical Data Entry Operator</div>
+        <div class="exp-company">Edusol Education Private Limited &middot; Coimbatore</div>
+        <ul class="exp-list">
+          <li>Wrote Python scripts to automate data validation and consistency checks across student and revenue datasets, reducing manual correction effort in weekly reporting cycles</li>
+          <li>Built and maintained structured reporting workflows in Python and Excel; delivered weekly and monthly reports with zero-error dataset handoffs</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">Jan 2025<br>&ndash;<br>May 2025</div>
+      <div class="exp-dot"></div>
+      <div class="exp-body">
+        <div class="exp-role">Operations &amp; Data Support Associate</div>
+        <div class="exp-company">Vandana Lakshmi Cotton Co. &middot; Coimbatore</div>
+        <ul class="exp-list">
+          <li>Developed automated Python scripts to generate weekly sales summary reports from raw inventory data, replacing a fully manual process</li>
+          <li>Maintained and structured inventory and sales datasets; identified and corrected data inconsistencies before month-end reporting cycles</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="sec-divider"></div>
+
+<div class="wrap">
+<section id="education">
+  <div class="sec-label">Education</div>
+  <h2 class="sec-title">Academic Background</h2>
+  <p class="sec-sub" style="margin-bottom:28px;">Strong CS fundamentals from a full four-year engineering degree.</p>
+  <div class="edu-card">
+    <div class="edu-icon">&#127963;&#65039;</div>
+    <div>
+      <div class="edu-title">Bachelor of Engineering &mdash; Computer Science</div>
+      <div class="edu-sub">PSNA College of Engineering and Technology, Dindigul &nbsp;&middot;&nbsp; Sep 2020 &ndash; May 2024</div>
+      <span class="edu-cgpa">&#10022; CGPA: 8.3 / 10</span>
+      <div class="edu-courses">
+        <p>Relevant Coursework</p>
+        <div class="edu-courses-tags">
+          <span class="edu-courses-tag">Data Structures &amp; Algorithms</span>
+          <span class="edu-courses-tag">DBMS</span>
+          <span class="edu-courses-tag">OOP</span>
+          <span class="edu-courses-tag">Operating Systems</span>
+          <span class="edu-courses-tag">Computer Networks</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="sec-divider"></div>
+
+<div class="wrap">
+<section id="certifications">
+  <div class="sec-label">Certifications</div>
+  <h2 class="sec-title">Verified Credentials</h2>
+  <p class="sec-sub" style="margin-bottom:28px;">Platform-verified certificates demonstrating practical skill proficiency.</p>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-icon hr">&#127922;</div>
+      <div class="cert-name">Python &mdash; Basic Certificate</div>
+      <div class="cert-issuer">HackerRank &middot; Verified</div>
+      <div class="cert-badge">&#10004; Verified</div>
+      <a class="cert-link" href="https://www.hackerrank.com/certificates/e76adc009c02" target="_blank">&#8599; View Certificate</a>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon hr">&#127922;</div>
+      <div class="cert-name">SQL &mdash; Basic &amp; Intermediate</div>
+      <div class="cert-issuer">HackerRank &middot; Verified</div>
+      <div class="cert-badge">&#10004; Verified</div>
+      <div style="font-size:11px;color:var(--text3);">JOINs &middot; Window Functions &middot; Subqueries &middot; Aggregations</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon edu">&#127891;</div>
+      <div class="cert-name">B.E. Computer Science</div>
+      <div class="cert-issuer">PSNA College of Engineering &middot; 2024</div>
+      <div class="cert-badge">&#10004; Completed</div>
+      <div style="font-size:11px;color:var(--text3);">CGPA: 8.3 / 10</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="sec-divider"></div>
+
+<div class="wrap">
+<section id="learning">
+  <div class="sec-label">Growth Roadmap</div>
+  <h2 class="sec-title">Currently Learning</h2>
+  <p class="sec-sub" style="margin-bottom:28px;">Structured path toward Data Engineering and eventually AI/ML Engineering.</p>
+  <div class="learning-grid">
+    <div class="learn-card"><div class="learn-icon">&#9889;</div><div class="learn-title">FastAPI &mdash; Advanced</div><span class="learn-status active">Active</span><div class="learn-desc">Background tasks, dependency injection, middleware, async endpoints</div></div>
+    <div class="learn-card"><div class="learn-icon">&#128011;</div><div class="learn-title">Docker</div><span class="learn-status active">Active</span><div class="learn-desc">Containerizing Python apps and FastAPI services</div></div>
+    <div class="learn-card"><div class="learn-icon">&#128260;</div><div class="learn-title">Apache Airflow</div><span class="learn-status active">Active</span><div class="learn-desc">DAG-based workflow orchestration for data pipelines</div></div>
+    <div class="learn-card"><div class="learn-icon">&#9729;&#65039;</div><div class="learn-title">Cloud (AWS)</div><span class="learn-status next">Up Next</span><div class="learn-desc">S3, Lambda, EC2 fundamentals for backend deployment</div></div>
+    <div class="learn-card"><div class="learn-icon">&#127959;&#65039;</div><div class="learn-title">System Design</div><span class="learn-status next">Up Next</span><div class="learn-desc">Scalability, caching, load balancing, database sharding</div></div>
+    <div class="learn-card"><div class="learn-icon">&#129302;</div><div class="learn-title">ML Engineering</div><span class="learn-status next">Horizon</span><div class="learn-desc">Scikit-learn, model serving, MLOps fundamentals</div></div>
+  </div>
+</section>
+</div>
+
+<div class="sec-divider"></div>
+
+<div class="wrap">
+<section id="profiles">
+  <div class="sec-label">Online Presence</div>
+  <h2 class="sec-title">Find Me Online</h2>
+  <p class="sec-sub" style="margin-bottom:28px;">My work and activity across coding and professional platforms.</p>
+  <div class="profiles-grid">
+    <a class="profile-card" href="https://github.com/Paul-Meshach" target="_blank">
+      <div class="profile-logo" style="background:#ffffff10;"><svg width="20" height="20" viewBox="0 0 24 24" fill="var(--text)"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></div>
+      <div><div class="profile-name">GitHub</div><div class="profile-handle">Paul-Meshach</div></div>
+    </a>
+    <a class="profile-card" href="https://www.linkedin.com/in/paulmeshachofficial/" target="_blank">
+      <div class="profile-logo" style="background:#0A66C220;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+      <div><div class="profile-name">LinkedIn</div><div class="profile-handle">paulmeshachofficial</div></div>
+    </a>
+    <a class="profile-card" href="https://www.hackerrank.com/certificates/e76adc009c02" target="_blank">
+      <div class="profile-logo" style="background:#00EA6420;"><span style="font-size:18px;font-weight:700;color:#00EA64;font-family:'Syne',sans-serif;">HR</span></div>
+      <div><div class="profile-name">HackerRank</div><div class="profile-handle">Python &amp; SQL Certified</div></div>
+    </a>
+  </div>
+</section>
+</div>
+
+<div class="sec-divider"></div>
+
+<div class="wrap">
+<section id="contact">
+  <div class="sec-label">Contact</div>
+  <h2 class="sec-title">Let's Work Together</h2>
+  <p class="sec-sub" style="margin-bottom:28px;">Open to full-time roles, internships, and contract work. Response within 24 hours.</p>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item"><div class="contact-item-icon">&#128231;</div><div><div class="contact-item-label">Email</div><div class="contact-item-val">paulowebmeshach@gmail.com</div></div></div>
+      <div class="contact-item"><div class="contact-item-icon">&#128205;</div><div><div class="contact-item-label">Location</div><div class="contact-item-val">Coimbatore, Tamil Nadu, India</div></div></div>
+      <div class="contact-item"><div class="contact-item-icon">&#128241;</div><div><div class="contact-item-label">Phone</div><div class="contact-item-val">+91 73054 19027</div></div></div>
+      <div class="contact-item"><div class="contact-item-icon">&#128188;</div><div><div class="contact-item-label">Open To</div><div class="contact-item-val">Junior Python / Backend Developer</div></div></div>
+    </div>
+    <div class="contact-cta">
+      <h3>Recruiting for a Python role?</h3>
+      <p>I'm a self-taught backend engineer who builds production-grade systems independently. I pick up frameworks fast, write clean API code, and I'm obsessed with getting things to actually work &mdash; not just run.</p>
+      <p>If you're building something in Python and need a junior who ships, let's talk.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a class="btn-primary" href="mailto:paulowebmeshach@gmail.com">&#9993; Send Email</a>
+        <a class="btn-secondary" href="https://www.linkedin.com/in/paulmeshachofficial/" target="_blank">LinkedIn Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer><p>&copy; 2026 Paul Meshach &middot; Coimbatore, India &middot; Built with purpose</p></footer>
+
+<script>
+const sections = document.querySelectorAll('section');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.06});
+sections.forEach(s=>{
+  s.style.opacity='0';
+  s.style.transform='translateY(18px)';
+  s.style.transition='opacity .65s ease,transform .65s ease';
+  obs.observe(s);
+});
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+function closeMobileMenu(){mobileMenu.classList.remove('open');hamburger.classList.remove('open');hamburger.setAttribute('aria-expanded','false');}
+hamburger.addEventListener('click',function(){
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+</script>
+</body>
+</html>
